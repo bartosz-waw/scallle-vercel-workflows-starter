@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.local
+.env*.local
+*.log
+.DS_Store
+.vercel
+.next/
+next-env.d.ts
+*.tsbuildinfo
+# Vercel Workflows: local run data, test bundles and generated routes
+.workflow-data/
+.workflow-vitest/
+src/app/.well-known/workflow/
+# SWC plugin cache (the workflow compiler)
+.swc/

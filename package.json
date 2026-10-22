@@ -1,0 +1,42 @@
+{
+  "name": "scallle-automations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A business's own Scallle automations, run on Vercel Workflows in the business's own Vercel account.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev --port 3010",
+    "build": "next build && node scripts/check-workflow-bundle.mjs",
+    "start": "next start --port 3010",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:workflows": "vitest run --config vitest.workflows.config.mts",
+    "e2e": "node scripts/e2e.mjs",
+    "mock:scallle": "node scripts/mock-scallle.mjs",
+    "mock:claude": "node scripts/mock-claude.mjs",
+    "send-test-job": "node scripts/send-test-job.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@vercel/oidc": "^4.0.0",
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "workflow": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@workflow/vitest": "^5.0.1",
+    "typescript": "^5.7.0",
+    "vitest": "^5.0.3"
+  },
+  "overrides": {
+    "@workflow/core": {
+      "devalue": "^5.9.4",
+      "nanoid": "^5.1.16"
+    }
+  }
+}
